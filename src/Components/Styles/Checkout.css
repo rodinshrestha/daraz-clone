@@ -1,0 +1,21 @@
+.checkout_container{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 90vh;
+    min-width: 1350px ;
+}
+.checkout_content{
+    width: 80%;
+    height: 100%;
+    display: flex;
+}
+.column_left_products_details{
+    width: 70%;
+    height: 100%; /*remove later */ 
+    overflow-y: scroll;
+}
+.column_right_payments_details{
+    width: 30%;
+    background-color: #f5f5f5;
+}

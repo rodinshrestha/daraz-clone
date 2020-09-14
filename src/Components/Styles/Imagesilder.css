@@ -1,0 +1,11 @@
+.image_slider{
+   object-fit: fill;
+   width: 100%;
+   height: 100%;
+}
+
+@media only screen and (max-width: 1300px) {
+   .image_slider{
+      object-fit: cover;
+   }
+}

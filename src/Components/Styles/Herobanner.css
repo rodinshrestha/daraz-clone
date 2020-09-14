@@ -1,0 +1,18 @@
+.hero-container{
+    display: flex;
+    justify-content: center;
+    height: 370px;
+    background: rgb(85, 149, 40);
+}
+.hero-content{
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1300px) {
+    .hero-content{
+        width: 100%;
+    }
+}

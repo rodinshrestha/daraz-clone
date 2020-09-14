@@ -1,0 +1,192 @@
+.mode{
+    filter: invert(1) hue-rotate(180deg);
+}
+.invert{
+    filter: invert(1) hue-rotate(180deg);
+}
+.Link_container{
+    min-height: 25px;
+    /* min-width: 1365px; */
+    background-color: rgba(158,158,158,.2);
+}
+.Link_list{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+    margin: auto;
+    text-align: right;
+    width: 80%;
+    min-height: 25px;  
+}
+.Link_bar{
+    font-size: 12px;
+    text-transform: uppercase;  
+}
+.Link_bar span{
+    padding: 0 17px;
+    cursor: pointer;
+
+}
+
+.Link_bar span:hover{
+    color: #f36f36;
+    text-decoration: underline;
+    transition: .2s all;
+}
+.logo_bar_container{
+    background-color: white;
+    height: 75px;
+    /* min-width: 1365px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.logo_content{
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+    width: 85%;
+}
+.logo_content img{
+    
+        width: 200px;
+        height: 50px;
+    
+}
+.search_input{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+.searchContent{
+    width: 100%;
+    align-items: center;
+}
+.filteredData{
+    width: 100%;
+    box-shadow: 0 4px 2px -2px gray;
+    background-color: white;
+    /* box-shadow: 0 0 12px #000; */
+    position: absolute;
+    z-index: 100;
+}
+.filteredData ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    /* background-color: #f5f5f5; */
+}
+
+.filteredData ul > li{
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.filteredData ul > li:hover{
+    color: #1a9cb7;
+}
+.search_field{
+    width: 99%;
+    display: flex;
+
+    border: none;
+    outline: none;
+    padding: 13px 11px;
+    background-color: #f5f5f5;
+}
+.search_icon{
+    padding: 9px 11px;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    outline: none;
+    background-color: #f57224
+}
+.products-catagories{
+    width: 225px;
+    height: 100%;
+    background: white;
+}
+.shopping_cart{
+    display: flex;
+    cursor: pointer;
+    
+}
+.shopping_cart > span{
+    margin-left: 5px;
+    color: black; 
+    text-decoration-style: 0;
+}
+
+.shopping_cart_icon{
+    width: 29px; 
+    height: 28px; 
+    color: black; 
+    
+}
+
+.download-daraz-logo{
+        width: 200px;
+        height: 45px;      
+    }
+
+.shopping_cart:hover .shopping_cart_icon{
+    color: #f57224;
+    transition: .3s all;
+}
+.sticky{
+    position: fixed;
+    transition: .1s all ;
+    z-index: 10;
+    background: white;    
+    width: 100%;
+    box-shadow: 0 -3px 12px 0 #000
+    
+}
+.none{
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .Link_list{
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .Link_bar{
+        /* font-size: 10px; */
+        margin: auto;
+    }
+    .Link_bar span{
+       margin-left: 10px;
+       padding: 0;    
+    }
+    span:nth-child(1){
+        color: red;
+        display: none;
+    }
+    span:nth-child(7){
+        display: none
+    }
+    span:nth-child(8){
+        display: none
+    }
+    .logo_content{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .logo_content img{
+        object-fit: contain;
+        width: 100px;
+        height: 50px;
+    }
+    .download-daraz-logo{
+        display: none;
+    }
+    
+}
