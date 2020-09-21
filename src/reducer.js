@@ -1,6 +1,6 @@
 export const initialState = {
   cart: [],
-  // searchData: "",
+  filteredData: [],
 };
 
 export const getCartTotal = (cart) =>
@@ -28,10 +28,12 @@ const reducer = (state, action) => {
         ...state,
         cart: newCart,
       };
-    // case "FILTER_SEARCH_DATA":
-    //   return {
-    //     searchData: state.searchData,
-    //   };
+
+    case "FILTERED_DATA":
+      return {
+        ...state.filteredData,
+        filteredData: [...state.filteredData, action.search],
+      };
 
     default:
       return state;

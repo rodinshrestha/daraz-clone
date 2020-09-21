@@ -9,3 +9,9 @@
       object-fit: cover;
    }
 }
+
+@media only screen and (max-width: 800px) {
+   .image_slider{
+      object-fit: contain;
+   }
+}

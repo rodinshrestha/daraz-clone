@@ -5,12 +5,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import { Link } from "react-router-dom";
 import { getProducts } from "../api/products";
-
+import { getNewProducts } from "../api/new-product";
 
 
 
 
 const Header = () => {
+  var combineData = [];
 
   const [modeSelector, setModeSelector] = React.useState(false);
   const[show, handleShow] = React.useState(false);
@@ -37,23 +38,33 @@ const Header = () => {
     // setloading(true)
     getProducts().then(res => {
       setProducts(res);
+  
       // setloading(false);
         
       })
+      
+
+      
   },[]);
+  combineData.push(...products);
+  React.useEffect(() => {
+    getNewProducts().then(data => {
+      setProducts(data);
+    })
+  },[])
+  combineData.push(...products);
+  console.log(combineData);
+
+  // console.log(products);
+  
+  
 
   React.useEffect(()=>{
     setFilteredData(
-      products.filter(product => {
+      combineData.filter(product => {
         return product.title.toLowerCase().includes(search.toLowerCase());
       })
-    )
-
-   
-
-    
-    
-    
+    ) 
   },[products, search]);
 
   const inProcess =() => {
@@ -65,6 +76,16 @@ const Header = () => {
   //   alert("asd");
     
   // }
+
+  const searchedItem =(e) => {
+    setSearch(e.target.value);
+    return setSearch;
+    // dispatch({
+    //         type:'FILTERED_DATA',
+    //         search:e.target.value
+    
+    //     });
+  }
 
   // const searchItem = (e) =>{
   //   setSearch(e.target.value)
@@ -118,7 +139,7 @@ const modeSwitch = () => {
           <div className="search_input">
             
             <div className="searchContent">
-              <input type="text" className="search_field" onChange={e => setSearch(e.target.value)} />
+              <input type="text" className="search_field" onChange={searchedItem} />
               <div className={`filteredData ${!search && 'none'}`}>
                 <ul>
                   {filteredData.map((productName, index) => (
@@ -152,3 +173,13 @@ const modeSwitch = () => {
 
 
 export default Header;
+
+export const searchedItem =(e) => {
+  // setSearch(e.target.value);
+  return (e.target.value);
+  // dispatch({
+  //         type:'FILTERED_DATA',
+  //         search:e.target.value
+  
+  //     });
+}

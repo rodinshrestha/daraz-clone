@@ -159,14 +159,14 @@
 
 @media only screen and (max-width: 800px) {
     .Link_bar{
-        /* font-size: 10px; */
+        font-size: 10px;
         margin: auto;
     }
     .Link_bar span{
        margin-left: 10px;
        padding: 0;    
     }
-    span:nth-child(1){
+    span:nth-last-child(7){
         color: red;
         display: none;
     }
@@ -188,5 +188,13 @@
     .download-daraz-logo{
         display: none;
     }
-    
+    .search_input{
+        width: 80%;
+    }
+    .logo_content img{
+        display: none;
+    }
+    .products-catagories{
+        display: none;
+    }
 }

@@ -32,7 +32,7 @@ const Product = ({id,title,image,rating,offPercentage,price}) => {
       <div className="product_details">
         <p className="product_title">{truncate(title, 50)}</p>
         {(offPercentage) ? 
-        <p className="product_netprice"><NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'Rs'} /></p> : 
+        <p className="product_netprice"><NumberFormat value={netPrice} displayType={'text'} thousandSeparator={true} prefix={'Rs'} /></p> : 
         <p className="product_netprice"><NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'Rs'} /></p> }
 
         {(!offPercentage)? <><br></br><br></br></> : 
@@ -40,7 +40,7 @@ const Product = ({id,title,image,rating,offPercentage,price}) => {
         <div className="product_rating">
           <Ratings
             rating={rating}
-            widgetRatedColors="black"
+            widgetRatedColors="#424242"
             widgetDimensions="14px"
             widgetSpacings="1px"
             // changeRating={this.changeRating}

@@ -10,6 +10,9 @@
     width: 15.8%;
     cursor: pointer;
 }
+.clickToHide{
+    display: none;
+}
 .product:hover{
     box-shadow: 0 1px 10px #000
 }
@@ -31,10 +34,11 @@
 }
 
 .product_title{
+    color: #424242;
     font-size: 14px;
     font-weight: 500;
     line-height: 15px;
-    color: #212121;
+    
 }
 .product_netprice{
    font-size: 16px;
@@ -72,4 +76,10 @@ background: #d0611e;
 }
 .product_rating{
     display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .product{
+        min-width: 47%;
+    }
 }

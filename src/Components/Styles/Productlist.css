@@ -5,6 +5,7 @@
 
 }
 h3{
+    color: #424242;
     margin-bottom: 8px;
     margin-left: 35px;
     font-weight: 500;
@@ -49,10 +50,12 @@ h3{
         
     }
     h3{
-        margin: auto;
-        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 13px;
+        margin-left: 13px;
     }
     .product_container{
-        margin-top: 10px;
+        margin-top: 8px;
     }
 } 

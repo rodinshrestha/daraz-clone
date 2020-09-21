@@ -40,6 +40,7 @@
 
 }
 .cards-containers p{
+    color: #424242;
     width: 100%;
     font-size: 19px;
     margin-left: 5%;
@@ -58,6 +59,25 @@
 
 @media only screen and (max-width: 800px) {
     .card-content{
-        width: 200px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 40px;
+    }
+    .cards-containers{
+        justify-content: space-evenly;
+    }
+    .cards-containers p{
+        
+        font-size: 10px;
+        text-align: center;
+    }
+    .card-content{
+        background-color: transparent;
+    }
+    .card-content:hover .card_arrow{
+        display: none;
+    }
+    .card-content:hover{
+        box-shadow: none;
     }
 }
