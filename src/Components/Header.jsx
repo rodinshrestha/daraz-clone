@@ -11,12 +11,11 @@ import { getNewProducts } from "../api/new-product";
 
 
 const Header = () => {
-  var combineData = [];
-
   const [modeSelector, setModeSelector] = React.useState(false);
   const[show, handleShow] = React.useState(false);
   const [search, setSearch] = React.useState("");
-  const[products, setProducts] = React.useState([]);
+  const[products, setProducts] = React.useState([]);  
+  const[newProducts, setNewProducts] = React.useState([]);  
   const[filteredData, setFilteredData] = React.useState([]);
   const[{cart}, dispatch] = useStateValue();
 
@@ -35,27 +34,22 @@ const Header = () => {
   }, []);
 
   React.useEffect(()=>{
-    // setloading(true)
     getProducts().then(res => {
-      setProducts(res);
-  
-      // setloading(false);
-        
-      })
-      
-
-      
+      setProducts(res);        
+      })  
   },[]);
+
+
+  const combineData = [];
   combineData.push(...products);
+  
   React.useEffect(() => {
     getNewProducts().then(data => {
-      setProducts(data);
+      setNewProducts(data);
     })
   },[])
-  combineData.push(...products);
+  combineData.push(...newProducts);
   console.log(combineData);
-
-  // console.log(products);
   
   
 
@@ -71,30 +65,12 @@ const Header = () => {
     alert("only dark/light freatures will work for now --------->")
   }
 
-  // const searchItem = (e) =>{
-  //   // setSearch(e.target.value)
-  //   alert("asd");
-    
-  // }
-
-  const searchedItem =(e) => {
+  const searchedItem = (e) =>{
     setSearch(e.target.value);
-    return setSearch;
-    // dispatch({
-    //         type:'FILTERED_DATA',
-    //         search:e.target.value
     
-    //     });
   }
 
-  // const searchItem = (e) =>{
-  //   setSearch(e.target.value)
-  //   dispatch({
-  //       type:'FILTER_SEARCH_DATA',
-  //       search:e.target.value
 
-  //   });
-  // }
 
   
 
@@ -174,12 +150,4 @@ const modeSwitch = () => {
 
 export default Header;
 
-export const searchedItem =(e) => {
-  // setSearch(e.target.value);
-  return (e.target.value);
-  // dispatch({
-  //         type:'FILTERED_DATA',
-  //         search:e.target.value
-  
-  //     });
-}
+

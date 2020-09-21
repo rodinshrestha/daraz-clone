@@ -6,11 +6,8 @@ import {getProducts} from "../api/products";
 import "./Styles/Productlist.css";
 import { useStateValue } from "../StateProvider";
 import { getNewProducts } from "../api/new-product";
-import {searchedItem} from "./Header";
 
 const Productlist = ()  =>{
-
-  let asd = searchedItem();
 
   const [{filteredData}, dispatch] = useStateValue();
   const [productsList, setProductList] = React.useState([])
@@ -30,9 +27,6 @@ const Productlist = ()  =>{
       })
   },[])
 
-
-  
-  console.log(asd);
   //console.log(filteredData.pop())
 
   
