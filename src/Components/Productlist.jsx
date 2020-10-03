@@ -7,6 +7,7 @@ import "./Styles/Productlist.css";
 import { useStateValue } from "../StateProvider";
 import { getNewProducts } from "../api/new-product";
 
+
 const Productlist = ()  =>{
 
   const [{filteredData}, dispatch] = useStateValue();
@@ -67,7 +68,6 @@ const Productlist = ()  =>{
   if(loading) return <div className="loading"><ReactLoading type="spinningBubbles"  color="black"/> </div>
   
   return (
-
     <div className="product_container">  
     <h3>Product List</h3>
     <div className="product_row_list" style={{minHeight:"200px"}}>
@@ -87,7 +87,7 @@ const Productlist = ()  =>{
     {newProductList.map((newProductList,index)=> <Product key={index} { ...newProductList} /> )}
     </div></>: ""}
     </div>
-
+  
   );
 }
 

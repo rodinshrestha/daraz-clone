@@ -5,6 +5,7 @@ import Cardlist from "../Components/Cardlist";
 import Productlist from "../Components/Productlist";
 import Herobanner from "../Components/Herobanner";
 import Checkout from "../Components/Checkout";
+import 'nprogress/nprogress.css';
 
 const App = () => {
   return (

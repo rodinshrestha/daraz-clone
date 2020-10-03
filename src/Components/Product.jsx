@@ -1,7 +1,9 @@
 import React from "react";
 import Ratings from 'react-ratings-declarative';
 import NumberFormat from 'react-number-format';
+import { ToastContainer, toast } from 'react-toastify';
 import {useStateValue} from "../StateProvider";
+import 'react-toastify/dist/ReactToastify.css';
 import "./Styles/Product.css";
 
 const Product = ({id,title,image,rating,offPercentage,price}) => {
@@ -13,6 +15,7 @@ const Product = ({id,title,image,rating,offPercentage,price}) => {
   const [{cart}, dispatch] = useStateValue();
 
   const addToCart = () => {
+    toast(title);
     console.log(cart);
     dispatch({
       type:'ADD_TO_BASKET',
@@ -26,6 +29,7 @@ const Product = ({id,title,image,rating,offPercentage,price}) => {
 
   return (    
     <div className="product">
+      <ToastContainer autoClose={1100} pauseOnHover = {false}/>
       
       <img src={image}  alt="asd" className="imgColor"/>
 

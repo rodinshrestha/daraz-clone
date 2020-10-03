@@ -6,6 +6,8 @@ import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import { Link } from "react-router-dom";
 import { getProducts } from "../api/products";
 import { getNewProducts } from "../api/new-product";
+import ScrollbarProgress from '../Components/ScrollbarProgress';
+
 
 
 
@@ -59,7 +61,7 @@ const Header = () => {
         return product.title.toLowerCase().includes(search.toLowerCase());
       })
     ) 
-  },[products, search]);
+  },[search]);
 
   const inProcess =() => {
     alert("only dark/light freatures will work for now --------->")
@@ -84,6 +86,10 @@ const modeSwitch = () => {
     setModeSelector(modeSelector ? false : true);
   })
 }
+
+
+
+
   return (
     <div className={`Header_content ${show && 'sticky'}`}>
       <div className="Link_container">
@@ -142,7 +148,9 @@ const modeSwitch = () => {
           />
         </div>
       </div>
-     
+      
+
+     <ScrollbarProgress />
     </div>
   );
 }
